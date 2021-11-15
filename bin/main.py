@@ -19,7 +19,4 @@ if __name__ == "__main__":
             elif(doWordsAppearInOrder(line, "@", "$")):
                 line = line.translate(str.maketrans({"\n" : "", "\t" : ""}))
                 tasksAndSolutions.append(line)
-
-
-#dnasiujdna
         
