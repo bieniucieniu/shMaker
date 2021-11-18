@@ -1,0 +1,82 @@
+[osp] Obsługa systemu plików w GNU/Linux
+
+01.	Sprawdź własny identyfikator oraz identyfikator grup, do których należysz.
+02.	Sprawdź kto jest zalogowany w chwili obecnej w systemie.
+03.	Zapoznaj się z opisem struktury katalogów - polecenie man 7 hier
+04.	Wyświetl zawartość katalogu domowego.
+05.	Wyświetl zawartość podstawowych katalogów w systemie (np. /etc, /home, /usr, /dev).
+06.	Utwórz katalog dir1 w katalogu domowym.
+07.	W katalogu dir1 utwórz jednym poleceniem strukturę katalogów src/test/moj
+08.	Usuń jednym poleceniem całą strukturę katalogów test/moj
+09.	Utwórz w katalogu domowym pliki o dowolnych nazwach z rozszerzeniami .txt .c
+10.	Skopiuj jednym poleceniem wszystkie pliki z katalogu domowego z rozszerzeniem .txt do katalogu dir1
+11.	Skopiuj jednym poleceniem wszystkie pliki z katalogu domowego z rozszerzeniem .c do katalogu dir/src
+12.	Skopiuj całą strukturę katalogów dir1 tworząc analogiczną strukturę o nazwie dir2
+13.	Usuń wszystkie pliki z katalogu dir1/src
+14.	Usuń jednym poleceniem całą strukturę katalogów dir2
+15.	Zmień nazwę dowolnego pliku w katalogu dir1
+16.	Przenieś katalog dir1/src do katalogu domowego tworząc w ten sposób katalog src1
+17.	Przy pomocy programu locate znajdź wszystkie pozycje, które posiadają w nazwie słowo mozilla
+18.	Przy pomocy programu locate znajdź wszystkie pozycje, które posiadają w nazwie słowo mozilla i znajdują się w podkatalogach katalogu /usr
+19.	Korzystając z programu find znajdź wszystkie pliki, które mają w nazwie słowo mozilla i znajdują się w podkatalogach katalogu /usr
+20.	Korzystając z programu find znajdź wszystkie katalogi o nazwie bin, które znajdują się w katalogu /usr
+21.	Skopiuj wszystkie pliki zwykłe o rozmiarze pomiędzy 10 a 100 bajtów z katalogu /usr/bin do katalogu dir1/bin (wykorzystując polecenie find z parametrem -exec).
+22.	W katalogu domowym utwórz plik o nazwie plik.txt i sprawdź jakie są prawa dostępu do niego.
+23.	Dla pliku plik.txt dodaj prawo zapisu dla grupy, po czym sprawdź jakie teraz są prawa dostępu.
+24.	Dla pliku plik.txt odejmij prawo zapisu dla właściciela oraz sprawdź efekt działania tej komendy.
+25.	Dla pliku plik.txt dodaj prawo wykonywania dla wszystkich użytkowników.
+26.	Dla pliku plik.txt przywróć oryginalne prawa korzystając z notacji numerycznej.
+27.	Utwórz dowiązanie do pliku plik.txt o nazwie plik2.txt w katalogu domowym.
+28.	Utwórz dowiązanie symboliczne do katalogu dir/bin o nazwie abc w katalogu domowym.
+29.	Przejrzyj pomoc systemową dla wszystkich poleceń używanych podczas zajęć.
+
+[procesy] Procesy w systemie operacyjnym GNU/Linux
+
+01.	Wyświetl listę własnych procesów. Porównaj wyniki z wynikami poleceń: ps x i ps ax
+02.	Zbadaj działanie przełączników l i u.
+03.	Zaloguj się do systemu kilkukrotnie poprzez wirtualne konsole lub otwierając nowe okno terminala w środowisku graficznym. Sprawdź nazwę terminala, na którym pracujesz. Podpowiedź (jak to zrobić - jtz.) można znaleźć w tty(1).
+04.	Znajdź proces macierzysty dla procesu ps. 
+05.	Odszukaj przodka wszystkich procesów (PID=1). 
+06.	Wyświetl hierarchię procesów, jtz.: pstree(1).
+07.	Obejrzyj listę procesów sortując ją wg stopnia zajętości procesora i ilości zajętej pamięci, jtz.: top(1).
+08.	W środowisku graficznym uruchom “Menedżer zadań” - program Xfce-taskmanager. Sprawdź identyfikator procesu init. 
+09.	Wyświetl identyfikatory wszystkich swoich interpreterów poleceń, jtz: pgrep(1).
+10.	Zapoznaj się z listą sygnałów na stronie man pomocy systemowej signal(7). 
+11.	Uruchom sesję edytora vim i wysyłaj komendą kill kolejne sygnały do tego procesu. Użyj sygnałów: HUP, INT, TERM, QUIT, KILL, STOP, CONT. 
+12.	Zbadaj działanie poleceń killall(1) i pkill(1) i opisz do czego one służą oraz kiedy mogą być pomocne.
+13.	Uruchom proces sleep w tle. Przełącz go do pracy w trybie pierwszoplanowym. 
+14.	Wstrzymaj sesję edytora vim  (kombinacja Ctrl-z), uruchom nową sesję i wstrzymaj ją również. 
+15.	Wyświetl aktywne sesje, (jtz.: komenda jobs). 
+16.	Wznów pracę edytora vim do trybu pierwszoplanowego komendą fg, następnie znów przełącz go do pracy w tle (jtz.: komenda bg).
+17.	Sprawdź, jakie polecenia uruchomił dowolny inny użytkownik, pracujący w tej chwili w systemie. 
+18.	Sprawdź status zakończenia procesu pgrep (program pgrep wywołany bez argumentu).
+19.	Sprawdź status zakończenia procesu ps.
+20.	Uruchom w tle wyszukiwanie w /usr plików z rozszerzeniem .py i obniż priorytet tego polecenia do najniższego.
+
+[potoki] Filtry tekstu, strumienie i przetwarzanie potokowe
+
+01.	Skopiuj plik /etc/passwd do katalogu domowego i zmień jego nazwę na tekst1
+02.	Korzystając z polecenia cat utwórz plik tekst3, który będzie składał się z zawartości pliku tekst1, ciągu znaków podanego ze standardowego wejścia (klawiatury) i pliku tekst2 zawierającego dzisiejszą datę. 
+03.	Wyświetl po 5 pierwszych linii wszystkich plików w swoim katalogu domowym w taki sposób, aby nie były wyświetlane ich nazwy. 
+04.	Wyświetl linie o numerach 3, 4 i 5 z pliku /etc/passwd 
+05.	Wyświetl linie o numerach 7, 6 i 5 od końca pliku /etc/passwd 
+06.	Wyświetl zawartość /etc/passwd w jednej linii.
+07.	Za pomocą filtru tr wykonaj modyfikację pliku tekst3, polegającą na umieszczeniu każdego słowa w osobnej linii. 
+08.	Zlicz wszystkie pliki znajdujące się w katalogu /etc i jego podkatalogach.
+09.	Napisz polecenie zliczające sumę znaków z pierwszych trzech linii pliku /etc/passwd 
+10.	Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie małe litery na duże. 
+11.	Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich rozmiar i nazwę. 
+12.	Wyświetl listę plików w aktualnym katalogu, posortowaną według rozmiaru pliku.
+13.	Wyświetl zawartość pliku /etc/passwd posortowaną wg numerów UID w kolejności od największego do najmniejszego.
+14.	Wyświetl zawartość pliku /etc/passwd posortowaną najpierw wg numerów GID w kolejności od największego do najmniejszego, a następnie UID.
+15.	Podaj liczbę plików użytkownika student.
+16.	Sporządź statystykę praw dostępu (dla każdego z praw dostępu podaj ile razy zostało ono przydzielone).
+17.	Podaj posortowane wg nazwy trzy najmniejsze pliki w katalogu domowym.
+18.	Podaj nazwy trzech użytkowników o największej liczbie uruchomionych procesów.
+19.	Wyświetl zawartość 3 największych podkatalogów katalogu bieżącego.
+20.	Wyświetl nazwy tych użytkowników, którzy domyślnie używają innego interpretera niż bash.
+21.	Wyświetl statystykę używanych komend (bez argumentów) w postaci posortowanej listy: liczba_użyć komenda (jtz: należy użyć polecenia history).
+22.	W katalogu users utwórz podkatalogi 5 użytkownikom ze swojego roku i dodatkowo zapisz w pliku o nazwie users.txt posortowaną listę tych użytkowników. 
+23.	Sprawdź czy któryś z użytkowników jest zalogowany w systemie więcej niż jeden raz. Dla każdego takiego użytkownika należy wyświetlić jego identyfikator i listę terminali na których pracuje.
+24.	Wyświetl posortowane nazwy plików nagłówkowych w plikach nagłówkowych znajdujących się w katalogu /usr/include/ 
+25.	Uruchom w tle wyszukiwanie w całym systemie plików o nazwach pasujących do wzorca “*user*”, błędy przekieruj na urządzenie puste (/dev/null), wyniki do pliku wyniki.txt. Uruchamiając, obniż priorytet tego polecenia do najniższego. 

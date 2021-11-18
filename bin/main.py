@@ -7,7 +7,7 @@ sorceFile = "sorce/solutions1.txt"
 if __name__ == "__main__":
 
     with open(sorceFile, "rt", encoding="utf-8") as inputFile:
-
+        
         tasksAndSolutions = []
         
 
@@ -19,4 +19,3 @@ if __name__ == "__main__":
             elif(doWordsAppearInOrder(line, "@", "$")):
                 line = line.translate(str.maketrans({"\n" : "", "\t" : ""}))
                 tasksAndSolutions.append(line)
-        
