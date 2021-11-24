@@ -1,0 +1,25 @@
+01.	Skopiuj plik /etc/passwd do katalogu domowego i zmień jego nazwę na tekst1
+02.	Korzystając z polecenia cat utwórz plik tekst3, który będzie składał się z zawartości pliku tekst1, ciągu znaków podanego ze standardowego wejścia (klawiatury) i pliku tekst2 zawierającego dzisiejszą datę. 
+03.	Wyświetl po 5 pierwszych linii wszystkich plików w swoim katalogu domowym w taki sposób, aby nie były wyświetlane ich nazwy. 
+04.	Wyświetl linie o numerach 3, 4 i 5 z pliku /etc/passwd 
+05.	Wyświetl linie o numerach 7, 6 i 5 od końca pliku /etc/passwd 
+06.	Wyświetl zawartość /etc/passwd w jednej linii.
+07.	Za pomocą filtru tr wykonaj modyfikację pliku tekst3, polegającą na umieszczeniu każdego słowa w osobnej linii. 
+08.	Zlicz wszystkie pliki znajdujące się w katalogu /etc i jego podkatalogach.
+09.	Napisz polecenie zliczające sumę znaków z pierwszych trzech linii pliku /etc/passwd 
+10.	Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie małe litery na duże. 
+11.	Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich rozmiar i nazwę. 
+12.	Wyświetl listę plików w aktualnym katalogu, posortowaną według rozmiaru pliku.
+13.	Wyświetl zawartość pliku /etc/passwd posortowaną wg numerów UID w kolejności od największego do najmniejszego.
+14.	Wyświetl zawartość pliku /etc/passwd posortowaną najpierw wg numerów GID w kolejności od największego do najmniejszego, a następnie UID.
+15.	Podaj liczbę plików użytkownika student.
+16.	Sporządź statystykę praw dostępu (dla każdego z praw dostępu podaj ile razy zostało ono przydzielone).
+17.	Podaj posortowane wg nazwy trzy najmniejsze pliki w katalogu domowym.
+18.	Podaj nazwy trzech użytkowników o największej liczbie uruchomionych procesów.
+19.	Wyświetl zawartość 3 największych podkatalogów katalogu bieżącego.
+20.	Wyświetl nazwy tych użytkowników, którzy domyślnie używają innego interpretera niż bash.
+21.	Wyświetl statystykę używanych komend (bez argumentów) w postaci posortowanej listy: liczba_użyć komenda (jtz: należy użyć polecenia history).
+22.	W katalogu users utwórz podkatalogi 5 użytkownikom ze swojego roku i dodatkowo zapisz w pliku o nazwie users.txt posortowaną listę tych użytkowników. 
+23.	Sprawdź czy któryś z użytkowników jest zalogowany w systemie więcej niż jeden raz. Dla każdego takiego użytkownika należy wyświetlić jego identyfikator i listę terminali na których pracuje.
+24.	Wyświetl posortowane nazwy plików nagłówkowych w plikach nagłówkowych znajdujących się w katalogu /usr/include/ 
+25.	Uruchom w tle wyszukiwanie w całym systemie plików o nazwach pasujących do wzorca “*user*”, błędy przekieruj na urządzenie puste (/dev/null), wyniki do pliku wyniki.txt. Uruchamiając, obniż priorytet tego polecenia do najniższego. 

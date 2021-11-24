@@ -14,7 +14,7 @@ def removeTo(string : str, word : str):
         
         pass
 
-def doCharsAppearInOrder(string : str, chars : str) -> bool:
+def doCharsAppearInStr(string : str, chars : str) -> bool:
     posChar = 0
     for i in string:
         if chars[posChar] == i:                                     
@@ -23,7 +23,7 @@ def doCharsAppearInOrder(string : str, chars : str) -> bool:
             return True
     else: return False
 
-def doWordsAppearInOrder(string : str, *words : str) -> bool:
+def doWordsAppearInStr(string : str, *words : str) -> bool:
     if not string:
         return False
     
