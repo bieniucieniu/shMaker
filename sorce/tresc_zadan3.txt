@@ -22,4 +22,4 @@
 22.	W katalogu users utwórz podkatalogi 5 użytkownikom ze swojego roku i dodatkowo zapisz w pliku o nazwie users.txt posortowaną listę tych użytkowników. 
 23.	Sprawdź czy któryś z użytkowników jest zalogowany w systemie więcej niż jeden raz. Dla każdego takiego użytkownika należy wyświetlić jego identyfikator i listę terminali na których pracuje.
 24.	Wyświetl posortowane nazwy plików nagłówkowych w plikach nagłówkowych znajdujących się w katalogu /usr/include/ 
-25.	Uruchom w tle wyszukiwanie w całym systemie plików o nazwach pasujących do wzorca “*user*”, błędy przekieruj na urządzenie puste (/dev/null), wyniki do pliku wyniki.txt. Uruchamiając, obniż priorytet tego polecenia do najniższego. 
+25.	Uruchom w tle wyszukiwanie w całym systemie plików o nazwach pasujących do wzorca “*user*”, błędy przekieruj na urządzenie puste (/dev/null), wyniki do pliku wyniki.txt. Uruchamiając, obniż priorytet tego polecenia do najniższego.
