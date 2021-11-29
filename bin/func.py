@@ -1,7 +1,3 @@
-
-from os import truncate
-
-
 def removeWhitespace(string : str) -> str:          
     string = string.replace(f' ','')
     string = string.replace(f'\t','')
@@ -42,3 +38,4 @@ def doWordsAppearInStr(string : str, *words : str) -> bool:
         inStringPos += 1
         if len(string) == inStringPos: return False
         if len(words) == inWordsPos: return True
+
