@@ -1,0 +1,269 @@
+Zad. 1. wlasny identyfikator można sprawdzić za pomoca polecenia ID  	
+
+Listing 1. Komendy (id) wykonane w terminalu znakowym
+user1@DESKTOP-BPJBSKP:/$ id
+uid=1001(user1) gid=1001(user1) groups=1001(user1)
+
+Zad. 2. System Linux charakteryzuje wielodostęp, oznacza to, że wielu użytkowników może pracować i korzystać z komputera jednocześnie. W celu wyświetlenie listy aktualnie zalogowanych użytkowników w systemie korzystamy z komendy who, która zwraca listę użytkowników, nazwę terminala i datę dostępu. Przykład użycia komendy who przedstawia listing 2.
+
+Listing 2. Komendy (who) wykonane w terminalu znakowym
+user1@DESKTOP-BPJBSKP:/$ who
+user1    tty8         2021-10-17 17:50 (:0)
+user2    tty8         2021-10-17 17:55 (:0)
+
+Zad. 3. W celu zapoznania się z opisem hierarchicznej struktury katalogów, z wykorzystaniem pomocy systemowej, użyto polecenia terminala pokazanego na listingu 3. Oznacza ono otarcie siódmej strony opisu hierarchicznej struktury katalogów z pomocy systemowej (polecenie man).
+
+Listing 3. Przykłady otwarcia podręcznika systemowego man (ang. manual)
+user1@DESKTOP-BPJBSKP:/$ man 7 hier
+
+Zad. 4. Listing 4 przedstawia komendę ls wykonaną w katalogu domowym użytkownika user1, poniżej komendy zostały wyświetlone kolejne katalogi (z powodu braku nieukrytych katalogów dodatkowo wpisałem przełącznik -a, który wyświetla wszystkie katalogi)
+
+Listing 4. Przykłady użycia polecenia ls wyświetlającego zawartość katalogu
+user1@DESKTOP-BPJBSKP:~$ ls -a
+.  ..  .bash_history  .bash_logout  .bashrc  .profile
+
+Zad. 5. Podobnie postąpiono w przypadku wyświetlenia zawartości katalogu /usr, w którym znajduje się ogólnodostępne dane dla użytkowników tylko do odczytu.
+
+Listing 5. Kolejne przkładowe użycie komendy ls.
+user1@DESKTOP-BPJBSKP:/usr$ ls -a
+.  ..  bin  games  include  lib  lib32  lib64  libexec  libx32  local  sbin  share  src
+
+Zad. 6. Ćwiczenie dotyczy tworzenia nowego katalogu w katalogu domowym za pomocą polecenia mkdir i przełącznika -v, który wyświetla czynności, które wykonuje. Polecenie ll jest równoważne z   ls -alF [2]
+
+Listing 6. Zakładanie katalogu i sprawdzanie parametrów założonego katalogu
+user1@DESKTOP-BPJBSKP:~$ mkdir -v dir1
+mkdir: created directory 'dir1'
+user1@DESKTOP-BPJBSKP:~$ ll
+total 28
+drwxr-xr-x 3 user1 user1 4096 Oct 17 18:45 ./
+drwxr-xr-x 4 root  root  4096 Oct 15 20:16 ../
+-rw------- 1 user1 user1  254 Oct 17 01:09 .bash_history
+-rw-r--r-- 1 user1 user1  220 Oct 15 20:16 .bash_logout
+-rw-r--r-- 1 user1 user1 3771 Oct 15 20:16 .bashrc
+-rw-r--r-- 1 user1 user1  807 Oct 15 20:16 .profile
+drwxrwxr-x 2 user1 user1 4096 Oct 17 18:45 dir1/
+
+Zad. 7. Za pomocą polecenia mkdir oraz przełącznika -p, który pozwala zarówno tworzyć i usuwać struty katalogów, strukturę katalogów src/test/moj w katalogu dir1	
+
+Listing 7. Zakładanie struktury katalogów
+user1@DESKTOP-BPJBSKP:~$ mkdir -vp dir1/src/test/moj
+mkdir: created directory 'dir1/src'
+mkdir: created directory 'dir1/src/test'
+mkdir: created directory 'dir1/src/test/moj'
+
+Zad. 8. Do usuwania katalogów używa się polecenia rmdir, aby usunąć strukturę trzeba dodatkowo użyć przełącznika -p. 
+
+Listing usuwanie struktury katalogów
+user1@DESKTOP-BPJBSKP:~/dir1$ rmdir -vp src/test/moj
+rmdir: removing directory, 'src/test/moj'
+rmdir: removing directory, 'src/test'
+rmdir: removing directory, 'src'
+
+Zad. 9. Pliki tworzy się za pomocą polecenia touch, służy ona również do odczytu pliku. Użyłem polecenia ls do wyświetlania utworzonych plików.
+
+Listing 9. Tworzenie plików
+user1@DESKTOP-BPJBSKP:~$ touch qwe.txt asd.c dsa.c ewq.txt
+user1@DESKTOP-BPJBSKP:~$ ls
+asd.c  dir1  dsa.c  ewq.txt  qwe.txt
+
+Zad. 10. Listing 10 przedstawia kopiowanie za pomocą polecenia cp wszystkich plików kończących się na „.txt” do katalogu dir1, „*” oznacza dowolny ciąg znaków, a „./” z bieżącego katalogu.
+
+Listing 10. kopiowania plikow do katalogu
+user1@DESKTOP-BPJBSKP:~$ cp ./*.txt dir1
+user1@DESKTOP-BPJBSKP:~$ cd dir1
+user1@DESKTOP-BPJBSKP:~/dir1$ ll
+total 8
+drwxrwxr-x 2 user1 user1 4096 Oct 17 20:17 ./
+drwxr-xr-x 3 user1 user1 4096 Oct 17 19:15 ../
+-rw-rw-r-- 1 user1 user1    0 Oct 17 20:17 ewq.txt
+-rw-rw-r-- 1 user1 user1    0 Oct 17 20:17 qwe.txt
+
+Zad. 11. Cwiczenie wykonujemy analogicznie do poprzedniego tylko wyszukujemy wszystkich plików kończących na „.c” i przenosimy je do dir1/src
+
+Listing 11. kopiowania plikow do katalogu
+user1@DESKTOP-BPJBSKP:~$ cp -v ./*.c dir1/src
+'./asd.c' -> 'dir1/src/asd.c'
+'./dsa.c' -> 'dir1/src/dsa.c'
+
+Zad. 12. Kopiowanie całych struktur katalogom wykonuje się za pomocą polecenia cp z przełącznikiem -r który pozwala na to.
+
+Listing 12. Kopiowanie struktury katalogów 
+user1@DESKTOP-BPJBSKP:~$ cp -vr dir1 dir2
+'dir1' -> 'dir2'
+'dir1/ewq.txt' -> 'dir2/ewq.txt'
+'dir1/qwe.txt' -> 'dir2/qwe.txt'
+'dir1/src' -> 'dir2/src'
+'dir1/src/test' -> 'dir2/src/test'
+'dir1/src/test/moj' -> 'dir2/src/test/moj'
+'dir1/src/asd.c' -> 'dir2/src/asd.c'
+'dir1/src/dsa.c' -> 'dir2/src/dsa.c'
+
+Zad. 13. Usuwanie plików wykonuje się za pomocą polecenia rm, żeby usunąć wszystkie pliki          używam * oznaczającej piki o dowolniej nazwie. Najpierw zmieniały katalog bieżący na dir1/src i wtedy usuwamy wszystkie pliki.
+
+Listing 13. Usuwanie plików
+user1@DESKTOP-BPJBSKP:~$ cd dir1/src
+user1@DESKTOP-BPJBSKP:~/dir1/src$ rm -v *
+removed 'asd.c'
+removed 'dsa.c'
+rm: cannot remove 'test': Is a directory
+
+Zad. 14. Usuwanie całego katalogu wykonuje się podobnie jak inne pliki, musimy jedynie dodać przełącznik -r.
+
+Listing 14.
+user1@DESKTOP-BPJBSKP:~$ rm -vr dir2
+removed 'dir2/src/dsa.c'
+removed directory 'dir2/src/test/moj'
+removed directory 'dir2/src/test'
+removed 'dir2/src/asd.c'
+removed directory 'dir2/src'
+removed 'dir2/qwe.txt'
+removed 'dir2/ewq.txt'
+removed directory 'dir2'
+
+Zad. 15. Zmiana nazwy pliku wykonywana jest za pomocą polecenia mv listing przedstawia zawartość katalogu przed i po wpisaniu polecenia.
+
+Listing 15 Zmiana nazwy
+drwxrwxr-x 3 user1 user1 4096 Oct 17 21:35 ./
+drwxr-xr-x 4 user1 user1 4096 Oct 17 21:41 ../
+-rw-rw-r-- 1 user1 user1    0 Oct 17 21:35 ewq.txt
+-rw-rw-r-- 1 user1 user1    0 Oct 17 21:35 qwe.txt
+drwxrwxr-x 3 user1 user1 4096 Oct 17 21:36 src/
+user1@DESKTOP-BPJBSKP:~/dir1$ mv ewq.txt asd.txt
+user1@DESKTOP-BPJBSKP:~/dir1$ ll
+total 12
+drwxrwxr-x 3 user1 user1 4096 Oct 17 21:43 ./
+drwxr-xr-x 4 user1 user1 4096 Oct 17 21:41 ../
+-rw-rw-r-- 1 user1 user1    0 Oct 17 21:35 asd.txt
+-rw-rw-r-- 1 user1 user1    0 Oct 17 21:35 qwe.txt
+drwxrwxr-x 3 user1 user1 4096 Oct 17 21:36 src/
+
+Zad. 16. Kopiowanie całej sztruksy katalogów pod inna nazwą wykonujemy za pomocą kopiowania zawartości do nie istniejącego jeszcze katalogu pod chciana nazwą.
+
+Listing 16.kopiwanie katalogu pod inną nazwą
+user1@DESKTOP-BPJBSKP:~$ cp -vr dir1/src src1
+'dir1/src' -> 'src1'
+'dir1/src/test' -> 'src1/test'
+'dir1/src/test/moj' -> 'src1/test/moj'
+
+ 
+Zad. 17. Po zainstalowaniu pakietu mlocate mamy dostęp do polecenia locate które wyszukuje ze swojej bazy danych pliki i katalogi które zawierają w swojej nazwie słowo „mozilla”. Jest to szybsza metoda w porównaniu z find, ale jesteśmy zawsze ograniczeniu do aktualnego stanu bazy danych, który nie jest co chwile odświeżany
+
+Listing 17. wyszukiwanie plików i katalogów
+user1@DESKTOP-BPJBSKP:~$ locate *mozilla*
+/usr/share/bash-completion/completions/mozilla-firefox
+/usr/share/ca-certificates/mozilla
+/usr/share/ca-certificates/mozilla/ACCVRAIZ1.crt
+/usr/share/ca-certificates/mozilla/AC_RAIZ_FNMT-RCM.crt
+/usr/share/ca-certificates/mozilla/Actalis_Authentication_Root_CA.crt
+...
+
+Zad. 18. Wyszukiwanie plików zawierające słowo „mozilla” w podkatalogach katalogu /usr.
+
+Listing 18. Wyszukiwanie plików w podkatalogach katalogów
+user1@DESKTOP-BPJBSKP:~$ locate /usr/*/*mozilla*
+/usr/share/bash-completion/completions/mozilla-firefox
+/usr/share/ca-certificates/mozilla
+/usr/share/ca-certificates/mozilla/ACCVRAIZ1.crt
+/usr/share/ca-certificates/mozilla/AC_RAIZ_FNMT-RCM.crt
+/usr/share/ca-certificates/mozilla/Actalis_Authentication_Root_CA.crt
+...
+
+Zad. 19. Wyszukiwanie plików i katalogów, za pomocą polecenie find, zawierające w nazwie „mozilla” za pomocą opcji -name, znajdujące się w katalogu /usr. Polecenie find w odróżnieniu od locate przeszukuje wszystkie podkatalogi podanego katalogu w poszukiwaniu, a nie własna bazę.
+
+Listing wyszukiwanie plików poleceniem find
+user1@DESKTOP-BPJBSKP:/$ find /usr -name *mozilla*
+/usr/share/bash-completion/completions/mozilla-firefox
+/usr/share/mime/application/vnd.mozilla.xul+xml.xml
+/usr/share/mime/application/x-mozilla-bookmarks.xml
+/usr/share/ca-certificates/mozilla
+
+Zad. 20. Wyszukiwanie katalogów o nazwie bin dzięki opcji -type d która wyświetla tyko katalogi.
+
+Listing 20. wyszukiwanie katalogów.
+user1@DESKTOP-BPJBSKP:/$ find /usr -type d -name bin
+/usr/lib/initramfs-tools/bin
+/usr/lib/klibc/bin
+/usr/share/doc/popularity-contest/examples/bin
+/usr/share/cryptsetup/initramfs/bin
+/usr/share/sensible-utils/bin
+/usr/bin
+/usr/local/bin
+
+
+ 
+Zad. 21. Wyszukiwanie wszystkich plików o rozmiarze pomiędzy 10 i 100 bajtów za pomocą find a następnie kopiowanie ich do katalogu dir1/bin.
+
+Listing 21. Wyszukiwanie, a następnie kopiowanie ich do konkretnego katalogu.
+user1@DESKTOP-BPJBSKP:~/dir1$ find /usr/bin -size +10c -size -100c -exec cp "{}" ~/dir1/bin \;
+user1@DESKTOP-BPJBSKP:~/dir1$ cd bin
+
+user1@DESKTOP-BPJBSKP:~/dir1/bin$ ll
+total 36780
+drwxrwxr-x 2 user1 user1    4096 Oct 19 18:10 ./
+drwxrwxr-x 4 user1 user1    4096 Oct 19 18:10 ../
+-rwxr-xr-x 1 user1 user1    7258 Oct 19 18:10 apt-add-repository*
+-rwxr-xr-x 1 user1 user1  711136 Oct 19 18:10 awk*
+-rwxr-xr-x 1 user1 user1     389 Oct 19 18:10 chardet3*
+-rwxr-xr-x 1 user1 user1   18487 Oct 19 18:10 compose*
+...
+
+
+Zad. 22. Po utworzeniu pliku poleceniem touch można sprawdzić jaki mamy do niego dostęp za pomocą polecenia ls z przełącznikiem -l.
+
+Listing 22. Tworzenie i sprawnie dostępu do pliku.
+user1@DESKTOP-BPJBSKP:~$ touch plik.txt
+user1@DESKTOP-BPJBSKP:~$ ls -l
+total 12
+-rw-rw-r-- 1 user1 user1    0 Oct 17 19:16 asd.c
+drwxrwxr-x 2 user1 user1 4096 Oct 17 21:12 asdd
+drwxrwxr-x 4 user1 user1 4096 Oct 19 18:10 dir1
+-rw-rw-r-- 1 user1 user1    0 Oct 17 19:16 dsa.c
+-rw-rw-r-- 1 user1 user1    0 Oct 17 19:16 ewq.txt
+-rw-rw-r-- 1 user1 user1    0 Oct 19 18:23 plik.txt
+-rw-rw-r-- 1 user1 user1    0 Oct 17 19:16 qwe.txt
+drwxrwxr-x 3 user1 user1 4096 Oct 17 23:27 src1
+
+Zad. 23. Dodawanie prawa zapisu plik.txt dla grup wykonuje się po przez polecenie chmod, przelacznik -v powoduje wyświetlanie co polecenie wykonuje, g+w określa ze dla grupy(g) dodaje(+) możliwość zapisu(w).
+
+Listing 23. Dodawanie uprawnień do zapisu pliki.
+user1@DESKTOP-BPJBSKP:~$ chmod -v g+w plik.txt
+mode of 'plik.txt' retained as 0664 (rw-rw-r--)
+
+Zad. 24. Po odebraniu praw do zapisu po przez polecenie chmod z u-w (gdzie – analogicznie odbiera uprawnieniu) i uruchomieniu edytora tekstu polecenium pico po probie zapisania pliku wyswietla komunikat „[ Error writing plik.txt: Permission denied ]” co oznacza, ze system nie zezwala na nadpisanie pliku.
+Listing 24. Odebranie uprawnień do zapisu pliku.
+user1@DESKTOP-BPJBSKP:~$ chmod -v u-w plik.txt
+mode of 'plik.txt' changed from 0664 (rw-rw-r--) to 0464 (r--rw-r--)
+user1@DESKTOP-BPJBSKP:~$ pico plik.txt
+
+ 
+Zad. 25. Prawo do wykonywaniu plików dla wszystkich użytkowników nadaje się poleceniem chmod a+x.
+
+Listing 25. Nadawanie prawa do wykonywania wszystkim użytkownikom.
+user1@DESKTOP-BPJBSKP:~$ chmod -v a+x plik.txt
+mode of 'plik.txt' changed from 0464 (r--rw-r--) to 0575 (r-xrwxr-x)
+
+Zad. 26. Przywrócenie oryginalnych praw przy pomocy notacji numerycznie także wykonuje się poleceniem chmod ale po nim następują trzy cyfry, które  kolejno opisują prawa dla właściciela, grupy i wszystkich. Wartosic cyfry odpowiada prawo odczytu – 4; prawo zapisu – 2, prawo wykonywania – 1, by je łączyć wystarczy je ze sobą zsumować.
+
+Listing 26. Przywracanie oryginalnych uprawnień do pliku
+user1@DESKTOP-BPJBSKP:~$ chmod -v 664 plik.txt
+mode of 'plik.txt' changed from 0575 (r-xrwxr-x) to 0664 (rw-rw-r--)
+
+Zad. 27. Tworzenie dowiązań (podobne do skrótów z Windows) tworzy polecenie ln po niej możemy podać przełącznik a następnie plik, do którego chcemy zrobić dowiązanie, a następnie docelowe umiejscowienie i nazwę dowiązania
+
+Listing 27. Tworzenie dowiązania.
+user1@DESKTOP-BPJBSKP:~$ ln -v ~/plik.txt ~/plik2.txt
+'/home/user1/plik2.txt' => '/home/user1/plik.txt'
+user1@DESKTOP-BPJBSKP:~$ ls
+asd.c  asdd  dir1  dsa.c  ewq.txt  plik.txt  plik2.txt  qwe.txt  src1
+
+Zad. 28. By stworzyć dowiązanie miękkie trzeba dodać przełącznik -s i postępować podobnie jak powyżej. Dowiązanie miękkie charakteryzuje możliwość tworzenia doważać również do katalogów oraz w innym systemie plików.
+
+Listing 28. Tworzenie dowiązania miękkiego.
+user1@DESKTOP-BPJBSKP:~$ ln -sv ./dir1/bin ~/abc
+'/home/user1/abc' -> './dir1/bin'
+
+Zad. 29. By zobaczyć pomoc systemowa dla poleceń użytych powyżej można skorzystać z polecenia man i po nim wpisać polecenie, bądź po polecaniu wpisać --help.
+
+Listing 29. Pomoc systemowa.
+user1@DESKTOP-BPJBSKP:~$ ls –help
+user1@DESKTOP-BPJBSKP:~$ man ls

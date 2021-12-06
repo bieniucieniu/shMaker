@@ -1,0 +1,20 @@
+01.	Wyświetl listę własnych procesów. Porównaj wyniki z wynikami poleceń: ps x i ps ax
+02.	Zbadaj działanie przełączników l i u.
+03.	Zaloguj się do systemu kilkukrotnie poprzez wirtualne konsole lub otwierając nowe okno terminala w środowisku graficznym. Sprawdź nazwę terminala, na którym pracujesz. Podpowiedź (jak to zrobić - jtz.) można znaleźć w tty(1).
+04.	Znajdź proces macierzysty dla procesu ps. 
+05.	Odszukaj przodka wszystkich procesów (PID=1). 
+06.	Wyświetl hierarchię procesów, jtz.: pstree(1).
+07.	Obejrzyj listę procesów sortując ją wg stopnia zajętości procesora i ilości zajętej pamięci, jtz.: top(1).
+08.	W środowisku graficznym uruchom “Menedżer zadań” - program Xfce-taskmanager. Sprawdź identyfikator procesu init. 
+09.	Wyświetl identyfikatory wszystkich swoich interpreterów poleceń, jtz: pgrep(1).
+10.	Zapoznaj się z listą sygnałów na stronie man pomocy systemowej signal(7). 
+11.	Uruchom sesję edytora vim i wysyłaj komendą kill kolejne sygnały do tego procesu. Użyj sygnałów: HUP, INT, TERM, QUIT, KILL, STOP, CONT. 
+12.	Zbadaj działanie poleceń killall(1) i pkill(1) i opisz do czego one służą oraz kiedy mogą być pomocne.
+13.	Uruchom proces sleep w tle. Przełącz go do pracy w trybie pierwszoplanowym. 
+14.	Wstrzymaj sesję edytora vim  (kombinacja Ctrl-z), uruchom nową sesję i wstrzymaj ją również. 
+15.	Wyświetl aktywne sesje, (jtz.: komenda jobs). 
+16.	Wznów pracę edytora vim do trybu pierwszoplanowego komendą fg, następnie znów przełącz go do pracy w tle (jtz.: komenda bg).
+17.	Sprawdź, jakie polecenia uruchomił dowolny inny użytkownik, pracujący w tej chwili w systemie. 
+18.	Sprawdź status zakończenia procesu pgrep (program pgrep wywołany bez argumentu).
+19.	Sprawdź status zakończenia procesu ps.
+20.	Uruchom w tle wyszukiwanie w /usr plików z rozszerzeniem .py i obniż priorytet tego polecenia do najniższego.

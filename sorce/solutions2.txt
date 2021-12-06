@@ -1,0 +1,135 @@
+zad. 1. Wyświetlanie listy procesów(ps) z przlacznikiem x (tabela) i a (wszyscy uzytkownicy) 
+
+bieniu@DESKTOP-BPJBSKP:~$ ps x
+PID TTY      STAT   TIME COMMAND
+9 pts/0    Ss     0:00 -bash
+75 pts/0    R+     0:00 ps x
+
+bieniu@DESKTOP-BPJBSKP:~$ ps ax
+PID TTY      STAT   TIME COMMAND
+1 ?        Sl     0:00 /init
+7 ?        Ss     0:00 /init
+8 ?        S      0:00 /init
+9 pts/0    Ss     0:00 -bash
+77 pts/0    R+     0:00 ps ax
+
+
+zad. 2. Wyświetlanie listy procesów(ps) z przłącznikiem -l (lista) oraz z przłącznikiem -u (wszyscy uzytkownicy) 
+
+bieniu@DESKTOP-BPJBSKP:~$ ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S  1000     9     8  0  80   0 -  2514 do_wai pts/0    00:00:00 bash
+0 R  1000    78     9  0  80   0 -  2631 -      pts/0    00:00:00 ps
+
+bieniu@DESKTOP-BPJBSKP:~$ ps -u
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+bieniu       9  0.0  0.0  10056  5056 pts/0    Ss   10:47   0:00 -bash
+bieniu      79  0.0  0.0  10604  3384 pts/0    R+   10:49   0:00 ps -u
+
+zad. 3. Wyświetlanie listy procesów(ps) z przłącznikiem -a (wyszstko) i -u (dane o użytkowniku)
+
+bieniu@DESKTOP-BPJBSKP:~$ ps -au
+
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+bieniu       9  0.0  0.0  10056  5056 pts/0    Ss   10:47   0:00 -bash
+bieniu      82  0.0  0.0  10056  5052 pts/1    Ss+  10:49   0:00 -bash
+bieniu      97  0.0  0.0  10056  5060 pts/2    Ss+  10:49   0:00 -bash
+bieniu     111  0.0  0.0  10604  3220 pts/0    R+   10:50   0:00 ps -au
+
+zad. 4. Wyświetlanie procesu macierzystego ps 
+
+bieniu@DESKTOP-BPJBSKP:~$ ps -f
+UID        PID  PPID  C STIME TTY          TIME CMD
+bieniu      97    96  0 10:49 pts/2    00:00:00 -bash
+bieniu     132    97  0 10:55 pts/2    00:00:00 ps -f
+
+zad. 5. Przodek wszystkich procesów
+bieniu@DESKTOP-BPJBSKP:~$ ps -A
+PID TTY          TIME CMD
+1 ?        00:00:00 init
+95 ?        00:00:00 init
+96 ?        00:00:00 init
+97 pts/2    00:00:00 bash
+133 pts/2    00:00:00 ps
+
+zad. 6. Drzewo procesow (pstree)
+bieniu@DESKTOP-BPJBSKP:~$ pstree
+init─┬─init───init───bash───pstree
+  └─2*[{init}]
+
+zad. 7. ”menedżer zadań” w terminalu (top) sortowanie po użyciu CPU 
+
+bieniu@DESKTOP-BPJBSKP:~$ top -o %CPU
+top - 11:00:56 up 13 min,  0 users,  load average: 0.00, 0.00, 0.00
+Tasks:   5 total,   1 running,   4 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7927.7 total,   7549.9 free,    255.3 used,    122.4 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7481.8 avail Mem
+
+PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+1 root      20   0    1744   1080   1016 S   0.0   0.0   0:00.00 init
+242 root      20   0    1752     68      0 S   0.0   0.0   0:00.00 init
+243 root      20   0    1752     76      0 S   0.0   0.0   0:00.00 init
+244 bieniu    20   0   10188   5216   3428 S   0.0   0.1   0:00.03 bash
+266 bieniu    20   0   10860   3712   3200 R   0.0   0.0   0:00.00 top
+
+zad. 8. menedżer zadań graficzny
+bieniu@DESKTOP-BPJBSKP:~$ gnome-system-monitor
+
+zad. 9. Identyfikator poleceń (pgrep).
+bieniu@DESKTOP-BPJBSKP:~$ pgrep
+
+zad. 10. Lista sygnałów systemowych (man 7 signal)
+bieniu@DESKTOP-BPJBSKP:~$ man 7 signal
+
+zad. 11. szuka sygnału bazując na  nazwie bądź na innych atrybutach
+bieniu@DESKTOP-BPJBSKP:~$ pgrep ^vim
+
+zad. 12. killall zabija wszystkie procesy bazując na nazwie
+bieniu@DESKTOP-BPJBSKP:~$ killall
+
+zad. 13. Zakończenie polecenia & powoduje uruchomienie go w tle by przeliczyć się do pierwszoplanowego używamy polecenia fg
+bieniu@DESKTOP-BPJBSKP:~$ sleep 1000 &
+
+bieniu@DESKTOP-BPJBSKP:~$ fg sleep
+
+zad. 14. uruchomienie edytora vim i wyjście z niego za pomoca CTRL + z
+bieniu@DESKTOP-BPJBSKP:~$ vim
+
+zad. 15. polecenie jobs wyświetla aktualnie działająca procesy, 
+bieniu@DESKTOP-BPJBSKP:~$ jobs
+[2]+  Stopped                 vim
+
+zad. 16. Przełącznie do działania pierwszoplanowego fg i do działania w tle
+bieniu@DESKTOP-BPJBSKP:~$ fg
+bieniu@DESKTOP-BPJBSKP:~$ bg
+
+zad. 17. ps -u (nazwa użytkownika) wpisany w innym terminalu wyświetla procesy podanego użytkownika.
+root@DESKTOP-BPJBSKP:~# ps -u bieniu
+PID TTY          TIME CMD
+244 pts/0    00:00:00 bash
+379 pts/1    00:00:00 bash
+408 pts/0    00:00:00 sleep
+
+zad. 18. Wyświetlenie statusu procesu pgrep za pomocą echo $?
+bieniu@DESKTOP-BPJBSKP:~$ pgrep 1
+
+bieniu@DESKTOP-BPJBSKP:~$ echo $?
+0
+
+zad. 19.Wyświetlenie statusu procesu pgrep za pomocą echo $?
+bieniu@DESKTOP-BPJBSKP:~$ ps
+PID TTY          TIME CMD
+244 pts/0    00:00:00 bash
+414 pts/0    00:00:00 ps
+bieniu@DESKTOP-BPJBSKP:~$ echo $?
+0
+
+zad. 20. Wyszukiwanie plików z rozszerzeniem .py ze zmniejszanym priorytetem (nice -n +15 (im większe tym mniejszy priorytet)).
+bieniu@DESKTOP-BPJBSKP:~$ nice -n +15 find /usr -name *.py
+/usr/lib/byobu/include/config.py
+/usr/lib/byobu/include/select-session.py
+/usr/lib/python3.8/heapq.py
+
+
+
