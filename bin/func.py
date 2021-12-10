@@ -39,3 +39,4 @@ def doWordsAppearInStr(string : str, *words : str) -> bool:
         if len(string) == inStringPos: return False
         if len(words) == inWordsPos: return True
 
+print("sadafasj")
